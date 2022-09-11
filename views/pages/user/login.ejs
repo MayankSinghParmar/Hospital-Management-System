@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | CAS</title>
+  <link href="../header.css" rel="stylesheet" type="text/css" />
+  <link href="../tables.css" rel="stylesheet" type="text/css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+    src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+  <script src="../validations/login.js"></script>
+</head>
+
+<header>
+  <%- include('../../partials/header') %>
+</header>
+
+<body>
+  <h1>Hospital Management System</h1>
+  <br>
+  <h2>Login</h2>
+  <form action="/login" method="post" id="login">
+    <table>
+      <tr>
+        <td>
+          Email
+        </td>
+        <td>
+          <input type="email" name="username" id="username" required="required" placeholder="Enter email Id">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Password
+        </td>
+        <td>
+          <input type="password" name="password" id="password" required="required">
+        </td>
+      </tr>
+    </table>
+    <div style='color: red;'>
+      <% if (message) { %>
+      <%= message %>
+      <% } %>
+    </div>
+    <br>
+    <br>
+    Login As : <input type="radio" name="profession" value="patient"> Patient <input type="radio" name="profession"
+      value="doctor"> Doctor <input type="radio" name="profession" value="supplier"> Supplier <input type="radio"
+      name="profession" value="admin"> Admin <br>
+    <br>
+    <button type="submit">Login</button>
+  </form>
+</body>
+
+</html>
